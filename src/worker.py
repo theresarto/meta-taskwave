@@ -132,7 +132,7 @@ class Worker:
         # Use coordinated logging to get the right log directory
         log_dir = None
         if run_name:
-            log_dir = Path("logs") / run_name
+            log_dir = Path("../logs") / run_name
             if not log_dir.exists():
                 log_dir.mkdir(parents=True, exist_ok=True)
         

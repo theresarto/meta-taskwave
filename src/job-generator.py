@@ -25,8 +25,8 @@ from job import Job
 from utils import setup_logger, setup_coordinated_logging, AsyncMessageHandler
 
 # ------------------------------- LOGGING SETUP ----------------------------------- #
-if not os.path.exists("logs"):
-    os.makedirs("logs")
+if not os.path.exists("../logs"):
+    os.makedirs("../logs")
 
 run_name = os.getenv("TASKWAVE_RUN_NAME", time.strftime("run_%Y-%m-%d_run_fallback"))
 log_dir = setup_coordinated_logging(run_name)

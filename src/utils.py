@@ -37,7 +37,7 @@ def create_timestamped_batch_folder():
     
     # Create folder with sequential run number
     folder_name = f"run_{timestamp}_run{_run_counter:03d}"
-    batch_folder = Path("logs") / folder_name
+    batch_folder = Path("../logs") / folder_name
     batch_folder.mkdir(parents=True, exist_ok=True)
     
     print(f"Created sequential batch folder: {batch_folder}")
@@ -111,7 +111,7 @@ def setup_worker_logger(worker_id, batch_folder=None):
     if batch_folder is None:
         run_name = os.getenv("TASKWAVE_RUN_NAME")
         if run_name:
-            batch_folder = Path("logs") / run_name
+            batch_folder = Path("../logs") / run_name
             if not batch_folder.exists():
                 batch_folder.mkdir(parents=True, exist_ok=True)
         else:
@@ -160,7 +160,7 @@ def setup_coordinated_logging(run_name: Optional[str] = None):
     if not run_name:
         raise ValueError("run_name must be provided to setup_coordinated_logging()")
 
-    batch_folder = Path("logs") / run_name
+    batch_folder = Path("../logs") / run_name
     batch_folder.mkdir(parents=True, exist_ok=True)
     
     # Create a run summary file
@@ -377,7 +377,7 @@ async def log_run_completion_async(batch_folder, stats=None):
 
 def find_latest_run_folder():
     """Find the most recent run folder."""
-    logs_dir = Path("logs")
+    logs_dir = Path("../logs")
     if not logs_dir.exists():
         return None
     
@@ -391,7 +391,7 @@ def find_latest_run_folder():
 
 def list_all_runs():
     """List all available run folders with their summaries."""
-    logs_dir = Path("logs")
+    logs_dir = Path("../logs")
     if not logs_dir.exists():
         print("No logs directory found.")
         return

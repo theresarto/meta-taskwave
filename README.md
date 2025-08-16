@@ -10,6 +10,8 @@ Meta TaskWave proposes a transparent, benchmark-driven framework for evaluating 
 
 The project implements **15 hybrid scheduling strategies** (3 job-side x 5 worker-side algorithms) evaluated across three workload intensities using a reproducible benchmarking protocol. The goal is to expose the performance regimes of different strategies and inform adaptive scheduling through structured insights.
 
+---
+
 ## Research Structure
 
 This project follows a three-part research methodology:
@@ -102,21 +104,80 @@ Multi-layered statistical approach validated against established practices in di
 4. **Thermal Efficiency Analysis:** Novel container lifecycle metrics building on cold start research (Fuerst & Sharma, 2021; Romero et al., 2021)
 5. **Cross-Validation:** Correlation validation ensuring methodological robustness
 
+---
 
 ## Installation and Setup
 
 ### Prerequisites
-- Python 3.8+
-- Required packages listed in `requirements.txt`
+- Python 3.12 (recommended) or Python 3.8+
+- Git
+- Conda (for analysis notebooks)
 
-### Installation
+### Environment Setup
+
+This project uses **dual environments** for optimal package management:
+- **Main project** (scheduler, benchmarks): Virtual environment with pip
+- **Analysis notebooks**: Conda environment for data science packages
+
+#### 1. Clone Repository
+```bash
+git clone https://github.com/yourusername/meta-taskwave.git
+cd meta-taskwave
+```
+
+#### 2. Main Project Setup (Pip Virtual Environment)
 
 ```bash
+# Create virtual environment
+python3.12 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 # Install dependencies
 pip install -r requirements.txt
 
-# Verify installation
-python config.py
+# Test installation
+cd src
+python -c "import config; print('✓ Main project setup successful')"
+```
+
+#### 3. Analysis Environment Setup (Conda)
+```bash
+# Create conda environment for analysis
+cd analysis
+conda env create -f environment.yml
+
+# Activate conda environment
+conda activate meta-taskwave-analysis
+
+# Test installation
+python -c "import pandas, numpy, matplotlib; print('✓ Analysis environment ready')"
+```
+
+### Environment Usage
+#### For running benchmarks and main system:
+```bash
+cd meta-taskwave/src
+source ../venv/bin/activate
+python benchmark.py --help
+```
+
+#### For analysis notebooks:
+```bash
+cd meta-taskwave/analysis
+conda activate meta-taskwave-analysis
+jupyter notebook
+```
+
+### Verification
+Test that both environments work correctly:
+```bash
+# Test main project
+cd src && source ../venv/bin/activate
+python scheduler.py --help
+
+# Test analysis environment  
+cd ../analysis && conda activate meta-taskwave-analysis
+jupyter notebook --version
 ```
 
 ## Usage Instructions
@@ -163,19 +224,50 @@ python benchmark.py --benchmark-mode cold_start_test --iterations 10 --job-limit
 ### Manual System Operation
 
 **Start complete system manually:**
+**Important:** You must start each command in separate terminals as outlined below.
+
 ```bash
-# Terminal 1: Start scheduler
-python scheduler.py --job-algorithm edf_job --worker-algorithm network_optimal_fair
+# Terminal 1: Scheduler (with algorithms)
+cd meta-taskwave/src
+source ../venv/bin/activate
+python scheduler.py --job-algorithm rr_job --worker-algorithm random_worker
+```
 
-# Terminal 2-5: Start workers (4 workers recommended)  
+```bash
+# Terminal 2: Worker 1 (with ID)
+cd meta-taskwave/src  
+source ../venv/bin/activate
 python worker.py --worker_id WORKER_1
-python worker.py --worker_id WORKER_2
-python worker.py --worker_id WORKER_3
-python worker.py --worker_id WORKER_4
+```
 
-# Terminal 6: Start job generator
+```bash
+# Terminal 3: Worker 2 (with ID)
+cd meta-taskwave/src
+source ../venv/bin/activate  
+python worker.py --worker_id WORKER_2
+```
+
+```bash
+# Terminal 4: Worker 3 (with ID)
+cd meta-taskwave/src  
+source ../venv/bin/activate
+python worker.py --worker_id WORKER_3
+```
+
+```bash
+# Terminal 5: Worker 4 (with ID)
+cd meta-taskwave/src
+source ../venv/bin/activate  
+python worker.py --worker_id WORKER_4
+```
+
+```bash
+# Terminal 6: Job Generator
+cd meta-taskwave/src
+source ../venv/bin/activate
 python job-generator.py
 ```
+---
 
 ## Benchmarking Methodology
 
@@ -231,22 +323,45 @@ The comprehensive statistical evaluation is documented in detailed Jupyter noteb
 ## File Structure
 
 ```
-meta_taskwave/
-├── README.md                    # Project documentation
-├── requirements.txt             # Python dependencies
-├── config.py                    # System configuration
-├── utils.py                     # Shared utilities and messaging
-├── job.py                       # Job data structure
-├── scheduler.py                 # Central scheduling coordinator  
-├── worker.py                    # Worker node implementation
-├── job-generator.py             # Workload generation
-├── benchmark.py                 # Benchmarking orchestrator
-├── benchmark_utils.py           # Metrics calculation and analysis
-└── results/                     # Generated benchmark data
-    └── benchmark_*/             # Timestamped experimental results
-        ├── benchmark_results.csv
-        ├── ml_consolidated_dataset.csv
-        └── benchmark_progress.csv
+meta-taskwave/
+├── README.md                         # Project overview and setup
+├── LICENSE                           # Project licence  
+├── .gitignore                        # Git ignore patterns
+├── requirements.txt                  # Main project dependencies (pip)
+│
+├── src/                              # Core source code
+│   ├── config.py                     # Configuration settings
+│   ├── utils.py                      # Utility functions
+│   ├── scheduler.py                  # Main scheduler
+│   ├── worker.py                     # Worker implementation
+│   ├── job.py                        # Job class definitions
+│   ├── job-generator.py              # Job generation logic
+│   ├── benchmark.py                  # Benchmark orchestrator
+│   └── benchmark_utils.py            # Benchmark utilities
+│
+├── analysis/                         # Jupyter notebooks and analysis
+│   ├── environment.yml               # Conda environment for analysis
+│   ├── requirements-analysis.txt     # Alternative pip requirements
+│   ├── 01_variance_analysis.ipynb 
+│   ├── 02_categorical_associations.ipynnb 
+│   ├── 03_thermal_efficiency_cross_val.ipynb
+│   ├── csv_exports/                  # Analysis results (from conda folder)
+│   └── img_exports/                  # Generated images (from conda folder)
+│
+├── benchmark/                        # Benchmark data and results
+│   ├── full-benchmark_2025-07-14/
+│   ├── full-benchmark_2025-07-16/
+│   ├── full-benchmark_2025-07-30/
+│   ├── full-benchmark_2025-07-31/
+│
+├── results/                          # Generated outputs (empty initially)
+│   └── .gitkeep      
+│
+├── logs/                             # Runtime logs (empty initially)
+│   └── .gitkeep   
+│
+└── docs/                             # Documentation
+    └── final_presentation.pdf        # Academic presentation
 ```
 
 ## Research Contributions

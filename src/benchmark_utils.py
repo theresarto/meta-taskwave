@@ -119,7 +119,7 @@ def find_latest_log_dir():
         Path: Path to the most recent log directory
     """
     
-    logs_dir = Path("logs")
+    logs_dir = Path("../logs")
     if not logs_dir.exists():
         return None
     
@@ -1630,7 +1630,7 @@ def consolidate_job_data_for_ml(results_dir: Path, run_results: List[Dict]) -> O
             continue
             
         # Look for job CSV in the run's log directory
-        job_csv_path = Path("logs") / run_name / f"{run_name}_jobs.csv"
+        job_csv_path = Path("../logs") / run_name / f"{run_name}_jobs.csv"
         
         if job_csv_path.exists():
             try:
