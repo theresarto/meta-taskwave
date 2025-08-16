@@ -171,7 +171,7 @@ class BenchmarkOrchestrator:
             result_df = pd.DataFrame([result])
             
             # Create path to logs directory for this run
-            log_dir = Path("logs") / run_name
+            log_dir = Path("../logs") / run_name
             if not log_dir.exists():
                 log_dir.mkdir(parents=True, exist_ok=True)
             
@@ -403,7 +403,7 @@ class BenchmarkOrchestrator:
         date_str = time.strftime("%Y-%m-%d_%H-%M")
         
         # Create a progress tracking CSV file
-        progress_dir = Path("results") / f"benchmark_{date_str}"
+        progress_dir = Path("../results") / f"benchmark_{date_str}"
         progress_dir.mkdir(parents=True, exist_ok=True)
         progress_path = progress_dir / "benchmark_progress.csv"
         
@@ -802,7 +802,7 @@ class BenchmarkOrchestrator:
         logger.info(f"Phase 2: Starting measurement phase at {datetime.fromtimestamp(measurement_start_time).strftime('%H:%M:%S.%f')[:-3]}...")
 
         # Use measurement phase job count logic
-        log_dir = Path("logs") / run_name
+        log_dir = Path("../logs") / run_name
         measurement_job_count_start = benchmark_utils.get_measurement_phase_job_count(log_dir)
         stall_timeout = config.STALL_TIMEOUT
         last_progress_time = measurement_start_time

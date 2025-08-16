@@ -55,7 +55,7 @@ def get_or_create_batch_folder():
         _current_batch_folder = create_timestamped_batch_folder()
     return _current_batch_folder
 
-def setup_logger(name, log_level=logging.INFO, console_level=logging.WARNING, log_dir=Path("logs")):
+def setup_logger(name, log_level=logging.INFO, console_level=logging.WARNING, log_dir=Path("../logs")):
     """Set up a logger with timestamped file and console handlers."""
     
     if isinstance(log_dir, str):

@@ -17,7 +17,7 @@ load_dotenv()
 
 # Setup default logger for config
 from utils import setup_logger  
-logger = setup_logger('Config')
+logger = setup_logger('Config', log_dir=Path("../logs"))
 
 # ------------------------------- ENVIRONMENT CONFIGURATION ----------------------------------- #
 

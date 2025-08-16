@@ -1417,7 +1417,7 @@ def export_job_level_data(scheduler_data: dict, worker_data: dict, run_name: str
     
     arrival_info = inter_arrival_mapping.get(benchmark_mode, inter_arrival_mapping['default'])
     
-    log_dir = Path("logs") / run_name
+    log_dir = Path("../logs") / run_name
     log_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
