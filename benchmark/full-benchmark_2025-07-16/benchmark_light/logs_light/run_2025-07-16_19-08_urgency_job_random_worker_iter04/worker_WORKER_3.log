@@ -1,0 +1,76 @@
+2025-07-16 22:08:54 [INFO] Worker WORKER_3 logger initialized. Logs will be saved to: logs/run_2025-07-16_19-08_urgency_job_random_worker_iter04/worker_WORKER_3.log
+2025-07-16 22:08:54 [INFO] Worker WORKER_3 created (capacity: 1070, cold start base: 300.0ms)
+2025-07-16 22:08:54 [INFO] Cold start will be applied to first job (COLD_START_ON_FIRST_RUN=true)
+2025-07-16 22:08:54 [INFO] Connecting to scheduler at 127.0.0.1:57935
+2025-07-16 22:08:54 [INFO] Worker WORKER_3 connected and registered with Scheduler at 127.0.0.1:57935
+2025-07-16 22:09:13 [INFO] Received job assignment: {'job_id': 2, 'operation': 'add', 'numbers': [8, 10], 'job_load': 548, 'priority': 1, 'deadline': 1752700172.4252641, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:09:13 [INFO] Worker WORKER_3 applying first-run cold start penalty in warm-up phase
+2025-07-16 22:09:13 [INFO] Worker WORKER_3 cold start: COLD (idle: 19.3s, penalty: 300.0ms, phase: warm_up, is_cold_start: True)
+2025-07-16 22:09:13 [INFO] Processing job 2 on Worker WORKER_3 with load 548. Current load: 548/1070
+2025-07-16 22:09:14 [INFO] Job 2 completed on Worker WORKER_3.
+2025-07-16 22:09:14 [INFO] Job 2 completed successfully: [8, 10] add = 18 (processed in 1.375s, cold_start_penalty: 300.0ms, warmth_state: COLD, is_cold_start: True, phase: warm_up)
+2025-07-16 22:09:14 [INFO] Received job assignment: {'job_id': 3, 'operation': 'add', 'numbers': [8, 1], 'job_load': 525, 'priority': 0, 'deadline': 1752700177.4274628, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:09:15 [INFO] Processing job 3 on Worker WORKER_3 with load 525. Current load: 525/1070
+2025-07-16 22:09:15 [INFO] Job 3 completed on Worker WORKER_3.
+2025-07-16 22:09:15 [INFO] Job 3 completed successfully: [8, 1] add = 9 (processed in 1.032s, cold_start_penalty: 0.0ms, warmth_state: HOT, is_cold_start: False, phase: warm_up)
+2025-07-16 22:09:15 [INFO] Received job assignment: {'job_id': 4, 'operation': 'multiply', 'numbers': [7, 3], 'job_load': 320, 'priority': 0, 'deadline': 1752700163.427784, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:09:16 [INFO] Processing job 4 on Worker WORKER_3 with load 320. Current load: 320/1070
+2025-07-16 22:09:16 [INFO] Job 4 completed on Worker WORKER_3.
+2025-07-16 22:09:16 [INFO] Job 4 completed successfully: [7, 3] multiply = 21 (processed in 0.677s, cold_start_penalty: 0.0ms, warmth_state: HOT, is_cold_start: False, phase: warm_up)
+2025-07-16 22:09:32 [INFO] Received job assignment: {'job_id': 7, 'operation': 'subtract', 'numbers': [8, 6], 'job_load': 300, 'priority': 0, 'deadline': 1752700190.820456, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:09:32 [INFO] Worker WORKER_3 cold start: WARM (idle: 17.0s, penalty: 50.0ms, phase: warm_up, is_cold_start: False)
+2025-07-16 22:09:33 [INFO] Processing job 7 on Worker WORKER_3 with load 300. Current load: 300/1070
+2025-07-16 22:09:33 [INFO] Job 7 completed on Worker WORKER_3.
+2025-07-16 22:09:33 [INFO] Job 7 completed successfully: [8, 6] subtract = 2 (processed in 0.668s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: warm_up)
+2025-07-16 22:09:36 [INFO] Received phase transition command from scheduler
+2025-07-16 22:09:36 [INFO] ★★★ Worker WORKER_3 entering measurement phase ★★★
+2025-07-16 22:09:36 [INFO] Warm-up phase stats:
+2025-07-16 22:09:36 [INFO]   Jobs received: 4
+2025-07-16 22:09:36 [INFO]   Jobs completed: 4
+2025-07-16 22:09:36 [INFO]   Cold starts: 0
+2025-07-16 22:09:36 [INFO] Sent phase transition acknowledgment to scheduler
+2025-07-16 22:10:39 [INFO] Received job assignment: {'job_id': 25, 'operation': 'add', 'numbers': [9, 3], 'job_load': 268, 'priority': 1, 'deadline': 1752700261.87419, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:10:39 [INFO] Worker WORKER_3 cold start: COLD (idle: 62.8s, penalty: 300.0ms, phase: measurement, is_cold_start: True)
+2025-07-16 22:10:39 [INFO] Processing job 25 on Worker WORKER_3 with load 268. Current load: 268/1070
+2025-07-16 22:10:39 [INFO] Job 25 completed on Worker WORKER_3.
+2025-07-16 22:10:39 [INFO] Job 25 completed successfully: [9, 3] add = 12 (processed in 0.862s, cold_start_penalty: 300.0ms, warmth_state: COLD, is_cold_start: True, phase: measurement)
+2025-07-16 22:10:39 [INFO] Received job assignment: {'job_id': 22, 'operation': 'multiply', 'numbers': [6, 6], 'job_load': 285, 'priority': 0, 'deadline': 1752700267.872712, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:10:40 [INFO] Processing job 22 on Worker WORKER_3 with load 285. Current load: 285/1070
+2025-07-16 22:10:40 [INFO] Job 22 completed on Worker WORKER_3.
+2025-07-16 22:10:40 [INFO] Job 22 completed successfully: [6, 6] multiply = 36 (processed in 0.589s, cold_start_penalty: 0.0ms, warmth_state: HOT, is_cold_start: False, phase: measurement)
+2025-07-16 22:10:40 [INFO] Received job assignment: {'job_id': 24, 'operation': 'power', 'numbers': [2, 9], 'job_load': 368, 'priority': 0, 'deadline': 1752700253.873913, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:10:40 [INFO] Processing job 24 on Worker WORKER_3 with load 368. Current load: 368/1070
+2025-07-16 22:10:41 [INFO] Job 24 completed on Worker WORKER_3.
+2025-07-16 22:10:41 [INFO] Job 24 completed successfully: [2, 9] power = 512 (processed in 0.733s, cold_start_penalty: 0.0ms, warmth_state: HOT, is_cold_start: False, phase: measurement)
+2025-07-16 22:10:53 [INFO] Received job assignment: {'job_id': 29, 'operation': 'power', 'numbers': [5, 7], 'job_load': 459, 'priority': 1, 'deadline': 1752700266.173491, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:10:53 [INFO] Worker WORKER_3 cold start: WARM (idle: 12.7s, penalty: 50.0ms, phase: measurement, is_cold_start: False)
+2025-07-16 22:10:53 [INFO] Processing job 29 on Worker WORKER_3 with load 459. Current load: 459/1070
+2025-07-16 22:10:54 [INFO] Job 29 completed on Worker WORKER_3.
+2025-07-16 22:10:54 [INFO] Job 29 completed successfully: [5, 7] power = 78125 (processed in 0.942s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: measurement)
+2025-07-16 22:11:03 [INFO] Received job assignment: {'job_id': 30, 'operation': 'add', 'numbers': [4, 9], 'job_load': 462, 'priority': 0, 'deadline': 1752700283.37654, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:11:03 [INFO] Worker WORKER_3 cold start: WARM (idle: 10.1s, penalty: 50.0ms, phase: measurement, is_cold_start: False)
+2025-07-16 22:11:03 [INFO] Processing job 30 on Worker WORKER_3 with load 462. Current load: 462/1070
+2025-07-16 22:11:04 [INFO] Job 30 completed on Worker WORKER_3.
+2025-07-16 22:11:04 [INFO] Job 30 completed successfully: [4, 9] add = 13 (processed in 0.973s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: measurement)
+2025-07-16 22:11:16 [INFO] Received job assignment: {'job_id': 32, 'operation': 'divide', 'numbers': [6, 2], 'job_load': 481, 'priority': 0, 'deadline': 1752700305.285176, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:11:16 [INFO] Worker WORKER_3 cold start: WARM (idle: 13.0s, penalty: 50.0ms, phase: measurement, is_cold_start: False)
+2025-07-16 22:11:16 [INFO] Processing job 32 on Worker WORKER_3 with load 481. Current load: 481/1070
+2025-07-16 22:11:17 [INFO] Worker WORKER_3 milestone - completed 10 jobs
+2025-07-16 22:11:17 [INFO] Performance stats: {'worker_id': 'WORKER_3', 'status': 'idle', 'uptime': 143.21041059494019, 'capacity': {'max_capacity': 1070, 'current_load': 0, 'available_capacity': 1070, 'load_percentage': 0.0}, 'performance': {'processing_speed': 0.8675199380942663, 'latency': 0.11910900664494425, 'bandwidth': 133.1326715645325, 'network_score': 2.79}, 'job_stats': {'jobs_completed': 10, 'jobs_failed': 0, 'active_jobs': 0, 'avg_processing_time': 0.8861174821853638}, 'cold_start': {'phase': 'measurement', 'phase_change_timestamp': 1752700176.1989, 'warm_up_jobs_received': 4, 'warm_up_jobs_completed': 4, 'warm_up_cold_starts': 0, 'measurement_jobs_received': 6, 'measurement_jobs_completed': 6, 'measurement_cold_starts': 0, 'avg_cold_start_penalty_ms': 0.0, 'cold_start_rate_percent': 0.0, 'last_activity_time': 1752700276.39469, 'warmth_level': 0.9831562161445617}, 'capabilities': ['add', 'subtract', 'multiply', 'divide', 'power']}
+2025-07-16 22:11:17 [INFO] Job 32 completed on Worker WORKER_3.
+2025-07-16 22:11:17 [INFO] Job 32 completed successfully: [6, 2] divide = 3.0 (processed in 1.010s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: measurement)
+2025-07-16 22:11:30 [INFO] Received job assignment: {'job_id': 34, 'operation': 'subtract', 'numbers': [1, 9], 'job_load': 352, 'priority': 0, 'deadline': 1752700304.92299, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:11:30 [INFO] Worker WORKER_3 cold start: WARM (idle: 14.6s, penalty: 50.0ms, phase: measurement, is_cold_start: False)
+2025-07-16 22:11:31 [INFO] Processing job 34 on Worker WORKER_3 with load 352. Current load: 352/1070
+2025-07-16 22:11:31 [INFO] Job 34 completed on Worker WORKER_3.
+2025-07-16 22:11:31 [INFO] Job 34 completed successfully: [1, 9] subtract = -8 (processed in 0.748s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: measurement)
+2025-07-16 22:11:44 [INFO] Received job assignment: {'job_id': 35, 'operation': 'multiply', 'numbers': [10, 8], 'job_load': 320, 'priority': 0, 'deadline': 1752700315.309175, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:11:44 [INFO] Worker WORKER_3 cold start: WARM (idle: 13.4s, penalty: 50.0ms, phase: measurement, is_cold_start: False)
+2025-07-16 22:11:44 [INFO] Processing job 35 on Worker WORKER_3 with load 320. Current load: 320/1070
+2025-07-16 22:11:45 [INFO] Job 35 completed on Worker WORKER_3.
+2025-07-16 22:11:45 [INFO] Job 35 completed successfully: [10, 8] multiply = 80 (processed in 0.723s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: measurement)
+2025-07-16 22:11:56 [INFO] Received job assignment: {'job_id': 37, 'operation': 'multiply', 'numbers': [2, 9], 'job_load': 215, 'priority': 1, 'deadline': 1752700342.8188071, 'status': 'assigned', 'worker_id': 'WORKER_3'}
+2025-07-16 22:11:56 [INFO] Worker WORKER_3 cold start: WARM (idle: 12.4s, penalty: 50.0ms, phase: measurement, is_cold_start: False)
+2025-07-16 22:11:57 [INFO] Processing job 37 on Worker WORKER_3 with load 215. Current load: 215/1070
+2025-07-16 22:11:57 [INFO] Job 37 completed on Worker WORKER_3.
+2025-07-16 22:11:57 [INFO] Job 37 completed successfully: [2, 9] multiply = 18 (processed in 0.813s, cold_start_penalty: 50.0ms, warmth_state: WARM, is_cold_start: False, phase: measurement)

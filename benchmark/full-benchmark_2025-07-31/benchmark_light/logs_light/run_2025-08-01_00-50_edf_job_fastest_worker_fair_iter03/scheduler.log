@@ -1,0 +1,232 @@
+2025-08-01 05:29:58 [INFO] Log level set to INFO
+2025-08-01 05:29:58 [INFO] Scheduler initialised with job algorithm: edf_job, worker algorithm: fastest_worker_fair
+2025-08-01 05:29:58 [INFO] Component architecture initialised with 15 algorithm combinations
+2025-08-01 05:29:58 [INFO] Scheduler starting...
+2025-08-01 05:29:58 [INFO] Server running on 127.0.0.1:57935
+2025-08-01 05:30:01 [INFO] New connection from ('127.0.0.1', 53659)
+2025-08-01 05:30:01 [INFO] Worker WORKER_1 registered with capacity 774, processing speed 1.103740053686339, network score 2.41
+2025-08-01 05:30:01 [INFO] Worker WORKER_1 connected from ('127.0.0.1', 53659)
+2025-08-01 05:30:01 [INFO] New connection from ('127.0.0.1', 53660)
+2025-08-01 05:30:01 [INFO] Worker WORKER_2 registered with capacity 1126, processing speed 0.8540931243039037, network score 7.36
+2025-08-01 05:30:01 [INFO] Worker WORKER_2 connected from ('127.0.0.1', 53660)
+2025-08-01 05:30:01 [INFO] New connection from ('127.0.0.1', 53661)
+2025-08-01 05:30:01 [INFO] Worker WORKER_3 registered with capacity 1129, processing speed 0.9704663052540752, network score 1.28
+2025-08-01 05:30:01 [INFO] Worker WORKER_3 connected from ('127.0.0.1', 53661)
+2025-08-01 05:30:01 [INFO] New connection from ('127.0.0.1', 53662)
+2025-08-01 05:30:01 [INFO] Worker WORKER_4 registered with capacity 929, processing speed 0.948182264153211, network score 1.84
+2025-08-01 05:30:01 [INFO] Worker WORKER_4 connected from ('127.0.0.1', 53662)
+2025-08-01 05:30:11 [INFO] New connection from ('127.0.0.1', 53663)
+2025-08-01 05:30:11 [INFO] Job Generator jobgen_79cff069 connected from ('127.0.0.1', 53663)
+2025-08-01 05:30:11 [INFO] Job 1 added to queue: operation=subtract, load=308, priority=0, deadline=1754022621.2, urgency_score=0.00
+2025-08-01 05:30:11 [INFO] Job 1 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:11 [INFO] Job 2 added to queue: operation=multiply, load=228, priority=0, deadline=1754022626.2, urgency_score=0.00
+2025-08-01 05:30:11 [INFO] Job 2 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:11 [INFO] Job 3 added to queue: operation=add, load=586, priority=1, deadline=1754022630.2, urgency_score=1.00
+2025-08-01 05:30:11 [INFO] Job 3 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:11 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022611.1905541, "job_id": 1, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022621.1585999, "job_load": 308, "age": 0.031845808029174805}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:11 [INFO] Assigned job 1 to worker WORKER_1 (phase: warm_up)
+2025-08-01 05:30:11 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022611.2427351, "job_id": 2, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022626.158654, "job_load": 228, "age": 0.08394074440002441}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:11 [INFO] Assigned job 2 to worker WORKER_1 (phase: warm_up)
+2025-08-01 05:30:11 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022611.294933, "job_id": 3, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022630.158704, "job_load": 586, "age": 0.1360938549041748}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:11 [INFO] Assigned job 3 to worker WORKER_1 (phase: warm_up)
+2025-08-01 05:30:12 [INFO] Job 1 completed successfully (phase=warm_up). Operation: subtract on [5, 5]. Result: 0. Processing time: 1.148s, Cold start penalty: 300.0ms, Warmth state: COLD, Warmth level: 0.0, Is cold start: True
+2025-08-01 05:30:13 [INFO] Job 2 completed successfully (phase=warm_up). Operation: multiply on [2, 1]. Result: 2. Processing time: 0.670s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:30:14 [INFO] Job 3 completed successfully (phase=warm_up). Operation: add on [4, 6]. Result: 10. Processing time: 1.461s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:30:24 [INFO] Job 4 added to queue: operation=subtract, load=249, priority=0, deadline=1754022635.4, urgency_score=0.00
+2025-08-01 05:30:24 [INFO] Job 4 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:24 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022624.401921, "job_id": 4, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022635.369013, "job_load": 249, "age": 0.0320887565612793}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:24 [INFO] Assigned job 4 to worker WORKER_1 (phase: warm_up)
+2025-08-01 05:30:25 [INFO] Job 4 completed successfully (phase=warm_up). Operation: subtract on [3, 10]. Result: -7. Processing time: 0.781s, Cold start penalty: 50.0ms, Warmth state: WARM, Warmth level: 0.5, Is cold start: False
+2025-08-01 05:30:34 [INFO] Job 5 added to queue: operation=multiply, load=394, priority=0, deadline=1754022660.0, urgency_score=0.00
+2025-08-01 05:30:34 [INFO] Job 5 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:34 [INFO] Job 6 added to queue: operation=divide, load=446, priority=0, deadline=1754022655.0, urgency_score=0.00
+2025-08-01 05:30:34 [INFO] Job 6 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:34 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022634.037981, "job_id": 6, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022655.0129359, "job_load": 446, "age": 0.024489879608154297}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:34 [INFO] Assigned job 6 to worker WORKER_1 (phase: warm_up)
+2025-08-01 05:30:34 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022634.090803, "job_id": 5, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022660.0121212, "job_load": 394, "age": 0.07795572280883789}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:34 [INFO] Assigned job 5 to worker WORKER_1 (phase: warm_up)
+2025-08-01 05:30:35 [INFO] Job 6 completed successfully (phase=warm_up). Operation: divide on [2, 10]. Result: 0.2. Processing time: 1.147s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:30:36 [INFO] Job 5 completed successfully (phase=warm_up). Operation: multiply on [4, 4]. Result: 16. Processing time: 1.032s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:30:43 [INFO] New connection from ('127.0.0.1', 53664)
+2025-08-01 05:30:43 [INFO] [MEASUREMENT PHASE] Received command to start measurement phase from Benchmarker.
+2025-08-01 05:30:43 [INFO] Starting measurement phase for run 'run_2025-08-01_00-50_edf_job_fastest_worker_fair_iter03' with timestamp 1754022643.16391
+2025-08-01 05:30:43 [INFO] ★★★ Scheduler transitioning to measurement phase ★★★
+2025-08-01 05:30:43 [INFO] Last warm-up job ID: 6 (highest assigned/completed job during warm-up)
+2025-08-01 05:30:43 [INFO] Sent measurement phase transition to worker WORKER_1
+2025-08-01 05:30:43 [INFO] Sent measurement phase transition to worker WORKER_2
+2025-08-01 05:30:43 [INFO] Sent measurement phase transition to worker WORKER_3
+2025-08-01 05:30:43 [INFO] Sent measurement phase transition to worker WORKER_4
+2025-08-01 05:30:43 [INFO] Worker WORKER_1 successfully transitioned to measurement phase
+2025-08-01 05:30:43 [INFO] Worker WORKER_2 successfully transitioned to measurement phase
+2025-08-01 05:30:43 [INFO] Worker WORKER_3 successfully transitioned to measurement phase
+2025-08-01 05:30:43 [INFO] Worker WORKER_4 successfully transitioned to measurement phase
+2025-08-01 05:30:48 [INFO] Job 7 added to queue: operation=power, load=460, priority=0, deadline=1754022664.3, urgency_score=0.00
+2025-08-01 05:30:48 [INFO] Job 7 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:48 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022648.328056, "job_id": 7, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022664.258958, "job_load": 460, "age": 0.06844496726989746}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:48 [INFO] Assigned job 7 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:30:49 [INFO] Job 7 completed successfully (phase=measurement). Operation: power on [4, 9]. Result: 262144. Processing time: 1.153s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:30:58 [INFO] Job 8 added to queue: operation=subtract, load=454, priority=1, deadline=1754022677.0, urgency_score=1.00
+2025-08-01 05:30:58 [INFO] Job 8 added to queue from generator jobgen_79cff069
+2025-08-01 05:30:58 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022658.9935591, "job_id": 8, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022676.958059, "job_load": 454, "age": 0.0348668098449707}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:30:58 [INFO] Assigned job 8 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:00 [INFO] Job 8 completed successfully (phase=measurement). Operation: subtract on [2, 7]. Result: -5. Processing time: 1.193s, Cold start penalty: 50.0ms, Warmth state: WARM, Warmth level: 0.5, Is cold start: False
+2025-08-01 05:31:08 [INFO] Job 9 added to queue: operation=multiply, load=457, priority=0, deadline=1754022681.2, urgency_score=0.00
+2025-08-01 05:31:08 [INFO] Job 9 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:08 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022668.229203, "job_id": 9, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022681.2277539, "job_load": 457, "age": 0.0006108283996582031}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:08 [INFO] Assigned job 9 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:08 [INFO] Job 10 added to queue: operation=multiply, load=346, priority=0, deadline=1754022678.2, urgency_score=0.00
+2025-08-01 05:31:08 [INFO] Job 10 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:08 [INFO] Job 11 added to queue: operation=subtract, load=405, priority=0, deadline=1754022679.2, urgency_score=0.00
+2025-08-01 05:31:08 [INFO] Job 11 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:08 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022668.282051, "job_id": 10, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022678.2286441, "job_load": 346, "age": 0.05205488204956055}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:08 [INFO] Assigned job 10 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:08 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022668.3351161, "job_id": 11, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022679.228965, "job_load": 405, "age": 0.10486412048339844}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:08 [INFO] Assigned job 11 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:09 [INFO] Job 9 completed successfully (phase=measurement). Operation: multiply on [9, 2]. Result: 18. Processing time: 1.212s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:10 [INFO] Job 10 completed successfully (phase=measurement). Operation: multiply on [9, 2]. Result: 18. Processing time: 0.965s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:11 [INFO] Job 11 completed successfully (phase=measurement). Operation: subtract on [10, 8]. Result: 2. Processing time: 1.097s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:21 [INFO] Job 12 added to queue: operation=add, load=508, priority=1, deadline=1754022709.0, urgency_score=1.00
+2025-08-01 05:31:21 [INFO] Job 12 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:21 [INFO] Job 13 added to queue: operation=power, load=453, priority=0, deadline=1754022705.0, urgency_score=0.00
+2025-08-01 05:31:21 [INFO] Job 13 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:21 [INFO] Job 14 added to queue: operation=power, load=216, priority=0, deadline=1754022703.0, urgency_score=0.00
+2025-08-01 05:31:21 [INFO] Job 14 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:21 [INFO] Job 15 added to queue: operation=multiply, load=306, priority=0, deadline=1754022704.0, urgency_score=0.00
+2025-08-01 05:31:21 [INFO] Job 15 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:22 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022682.041764, "job_id": 14, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022702.9918048, "job_load": 216, "age": 0.049447059631347656}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 3, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:22 [INFO] Assigned job 14 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:22 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022682.094395, "job_id": 15, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022703.99207, "job_load": 306, "age": 0.10175609588623047}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:22 [INFO] Assigned job 15 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:22 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022682.147053, "job_id": 13, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022704.991489, "job_load": 453, "age": 0.15499091148376465}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:22 [INFO] Assigned job 13 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:22 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022682.199587, "job_id": 12, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022708.990685, "job_load": 508, "age": 0.20817303657531738}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:22 [INFO] Assigned job 12 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:22 [INFO] Job 14 completed successfully (phase=measurement). Operation: power on [8, 3]. Result: 512. Processing time: 0.683s, Cold start penalty: 50.0ms, Warmth state: WARM, Warmth level: 0.5, Is cold start: False
+2025-08-01 05:31:23 [INFO] Job 15 completed successfully (phase=measurement). Operation: multiply on [1, 4]. Result: 4. Processing time: 0.829s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:24 [INFO] Job 13 completed successfully (phase=measurement). Operation: power on [6, 8]. Result: 1679616. Processing time: 1.154s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:26 [INFO] Job 12 completed successfully (phase=measurement). Operation: add on [2, 8]. Result: 10. Processing time: 1.274s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:34 [INFO] Job 16 added to queue: operation=multiply, load=533, priority=0, deadline=1754022710.2, urgency_score=0.00
+2025-08-01 05:31:34 [INFO] Job 16 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:34 [INFO] Job 17 added to queue: operation=multiply, load=382, priority=1, deadline=1754022709.2, urgency_score=1.00
+2025-08-01 05:31:34 [INFO] Job 17 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:34 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022694.289173, "job_id": 17, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022709.2067661, "job_load": 382, "age": 0.08191108703613281}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:34 [INFO] Assigned job 17 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:34 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022694.3421178, "job_id": 16, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022710.2059479, "job_load": 533, "age": 0.13547587394714355}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:34 [INFO] Assigned job 16 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:35 [INFO] Job 17 completed successfully (phase=measurement). Operation: multiply on [3, 9]. Result: 27. Processing time: 1.015s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:36 [INFO] Job 16 completed successfully (phase=measurement). Operation: multiply on [4, 10]. Result: 40. Processing time: 1.349s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:47 [INFO] Job 18 added to queue: operation=divide, load=481, priority=0, deadline=1754022734.1, urgency_score=0.00
+2025-08-01 05:31:47 [INFO] Job 18 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:47 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022707.149046, "job_id": 18, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022734.074162, "job_load": 481, "age": 0.0742807388305664}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:47 [INFO] Assigned job 18 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:48 [INFO] Job 18 completed successfully (phase=measurement). Operation: divide on [4, 6]. Result: 0.6666666666666666. Processing time: 1.301s, Cold start penalty: 50.0ms, Warmth state: WARM, Warmth level: 0.5, Is cold start: False
+2025-08-01 05:31:56 [INFO] Job 19 added to queue: operation=multiply, load=264, priority=0, deadline=1754022729.9, urgency_score=0.00
+2025-08-01 05:31:56 [INFO] Job 19 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:56 [INFO] Job 20 added to queue: operation=subtract, load=364, priority=1, deadline=1754022735.9, urgency_score=1.00
+2025-08-01 05:31:56 [INFO] Job 20 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:56 [INFO] Job 21 added to queue: operation=multiply, load=349, priority=0, deadline=1754022745.9, urgency_score=0.00
+2025-08-01 05:31:56 [INFO] Job 21 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:56 [INFO] Job 22 added to queue: operation=subtract, load=329, priority=1, deadline=1754022730.9, urgency_score=1.00
+2025-08-01 05:31:56 [INFO] Job 22 added to queue from generator jobgen_79cff069
+2025-08-01 05:31:56 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022716.993872, "job_id": 19, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022729.945185, "job_load": 264, "age": 0.04797220230102539}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 3, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:56 [INFO] Assigned job 19 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:57 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022717.046865, "job_id": 22, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022730.946711, "job_load": 329, "age": 0.0994257926940918}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:57 [INFO] Assigned job 22 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:57 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022717.099787, "job_id": 20, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022735.945983, "job_load": 364, "age": 0.15317988395690918}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:57 [INFO] Assigned job 20 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:57 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022717.152606, "job_id": 21, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022745.9464068, "job_load": 349, "age": 0.20548319816589355}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:31:57 [INFO] Assigned job 21 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:31:57 [INFO] Job 19 completed successfully (phase=measurement). Operation: multiply on [9, 9]. Result: 81. Processing time: 0.772s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:58 [INFO] Job 22 completed successfully (phase=measurement). Operation: subtract on [10, 6]. Result: 4. Processing time: 0.915s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:31:59 [INFO] Job 20 completed successfully (phase=measurement). Operation: subtract on [9, 10]. Result: -1. Processing time: 0.993s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:00 [INFO] Job 21 completed successfully (phase=measurement). Operation: multiply on [8, 3]. Result: 24. Processing time: 0.958s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:08 [INFO] Job 23 added to queue: operation=subtract, load=323, priority=1, deadline=1754022755.0, urgency_score=1.00
+2025-08-01 05:32:08 [INFO] Job 23 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:08 [INFO] Job 24 added to queue: operation=add, load=317, priority=0, deadline=1754022746.0, urgency_score=0.00
+2025-08-01 05:32:08 [INFO] Job 24 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:08 [INFO] Job 25 added to queue: operation=add, load=430, priority=0, deadline=1754022757.0, urgency_score=0.00
+2025-08-01 05:32:08 [INFO] Job 25 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:09 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022729.03455, "job_id": 24, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022745.991782, "job_load": 317, "age": 0.04219794273376465}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:09 [INFO] Assigned job 24 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:09 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022729.087339, "job_id": 23, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022754.990873, "job_load": 323, "age": 0.09570479393005371}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:09 [INFO] Assigned job 23 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:09 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022729.140008, "job_id": 25, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022756.992146, "job_load": 430, "age": 0.14719629287719727}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:09 [INFO] Assigned job 25 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:09 [INFO] Job 24 completed successfully (phase=measurement). Operation: add on [8, 1]. Result: 9. Processing time: 0.886s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:10 [INFO] Job 23 completed successfully (phase=measurement). Operation: subtract on [7, 2]. Result: 5. Processing time: 0.901s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:12 [INFO] Job 25 completed successfully (phase=measurement). Operation: add on [8, 3]. Result: 11. Processing time: 1.137s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:17 [INFO] Job 26 added to queue: operation=add, load=299, priority=1, deadline=1754022753.2, urgency_score=1.00
+2025-08-01 05:32:17 [INFO] Job 26 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:17 [INFO] Job 27 added to queue: operation=subtract, load=536, priority=1, deadline=1754022757.2, urgency_score=1.00
+2025-08-01 05:32:17 [INFO] Job 27 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:17 [INFO] Job 28 added to queue: operation=multiply, load=459, priority=1, deadline=1754022748.2, urgency_score=1.00
+2025-08-01 05:32:17 [INFO] Job 28 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:17 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022737.254338, "job_id": 28, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022748.2297049, "job_load": 459, "age": 0.02411484718322754}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:17 [INFO] Assigned job 28 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:17 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022737.3070989, "job_id": 26, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022753.228666, "job_load": 299, "age": 0.0777750015258789}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:17 [INFO] Assigned job 26 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:17 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022737.359925, "job_id": 27, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022757.229408, "job_load": 536, "age": 0.12996506690979004}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:17 [INFO] Assigned job 27 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:18 [INFO] Job 28 completed successfully (phase=measurement). Operation: multiply on [10, 1]. Result: 10. Processing time: 1.213s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:19 [INFO] Job 26 completed successfully (phase=measurement). Operation: add on [7, 5]. Result: 12. Processing time: 0.860s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:20 [INFO] Job 27 completed successfully (phase=measurement). Operation: subtract on [4, 4]. Result: 0. Processing time: 1.383s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:27 [INFO] Job 29 added to queue: operation=add, load=312, priority=0, deadline=1754022763.9, urgency_score=0.00
+2025-08-01 05:32:27 [INFO] Job 29 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:27 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022747.922034, "job_id": 29, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022763.8772511, "job_load": 312, "age": 0.04387688636779785}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:27 [INFO] Assigned job 29 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:28 [INFO] Job 29 completed successfully (phase=measurement). Operation: add on [9, 3]. Result: 12. Processing time: 0.889s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:36 [INFO] Job 30 added to queue: operation=multiply, load=503, priority=1, deadline=1754022769.3, urgency_score=1.00
+2025-08-01 05:32:36 [INFO] Job 30 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:36 [INFO] Job 31 added to queue: operation=multiply, load=237, priority=0, deadline=1754022772.3, urgency_score=0.00
+2025-08-01 05:32:36 [INFO] Job 31 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:36 [INFO] Job 32 added to queue: operation=add, load=537, priority=0, deadline=1754022774.3, urgency_score=0.00
+2025-08-01 05:32:36 [INFO] Job 32 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:36 [INFO] Job 33 added to queue: operation=subtract, load=262, priority=0, deadline=1754022769.3, urgency_score=0.00
+2025-08-01 05:32:36 [INFO] Job 33 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:36 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022756.341404, "job_id": 30, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022769.2546518, "job_load": 503, "age": 0.08606505393981934}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 3, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:36 [INFO] Assigned job 30 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:36 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022756.3943942, "job_id": 33, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022769.255965, "job_load": 262, "age": 0.13785314559936523}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:36 [INFO] Assigned job 33 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:36 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022756.447287, "job_id": 31, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022772.2554271, "job_load": 237, "age": 0.1913290023803711}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:36 [INFO] Assigned job 31 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:36 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022756.500302, "job_id": 32, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022774.2557209, "job_load": 537, "age": 0.24408698081970215}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:36 [INFO] Assigned job 32 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:37 [INFO] Job 30 completed successfully (phase=measurement). Operation: multiply on [8, 5]. Result: 40. Processing time: 1.311s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:38 [INFO] Job 33 completed successfully (phase=measurement). Operation: subtract on [3, 3]. Result: 0. Processing time: 0.779s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:39 [INFO] Job 31 completed successfully (phase=measurement). Operation: multiply on [9, 1]. Result: 9. Processing time: 0.724s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:40 [INFO] Job 32 completed successfully (phase=measurement). Operation: add on [3, 8]. Result: 11. Processing time: 1.386s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:45 [INFO] Job 34 added to queue: operation=divide, load=551, priority=0, deadline=1754022782.7, urgency_score=0.00
+2025-08-01 05:32:45 [INFO] Job 34 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:45 [INFO] Job 35 added to queue: operation=power, load=321, priority=0, deadline=1754022791.7, urgency_score=0.00
+2025-08-01 05:32:45 [INFO] Job 35 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:45 [INFO] Job 36 added to queue: operation=power, load=282, priority=1, deadline=1754022792.7, urgency_score=1.00
+2025-08-01 05:32:45 [INFO] Job 36 added to queue from generator jobgen_79cff069
+2025-08-01 05:32:45 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022765.8357592, "job_id": 34, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022782.748384, "job_load": 551, "age": 0.08669590950012207}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 2, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:45 [INFO] Assigned job 34 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:45 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022765.888777, "job_id": 35, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022791.749196, "job_load": 321, "age": 0.13908696174621582}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:45 [INFO] Assigned job 35 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:45 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022765.941785, "job_id": 36, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022792.7495098, "job_load": 282, "age": 0.19173502922058105}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:32:45 [INFO] Assigned job 36 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:32:47 [INFO] Job 34 completed successfully (phase=measurement). Operation: divide on [5, 7]. Result: 0.7142857142857143. Processing time: 1.417s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:48 [INFO] Job 35 completed successfully (phase=measurement). Operation: power on [8, 8]. Result: 16777216. Processing time: 0.886s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:32:49 [INFO] Job 36 completed successfully (phase=measurement). Operation: power on [1, 8]. Result: 1. Processing time: 0.800s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:33:00 [INFO] Job 37 added to queue: operation=power, load=477, priority=1, deadline=1754022795.1, urgency_score=1.00
+2025-08-01 05:33:00 [INFO] Job 37 added to queue from generator jobgen_79cff069
+2025-08-01 05:33:00 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022780.07212, "job_id": 37, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022795.052206, "job_load": 477, "age": 0.019109249114990234}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:33:00 [INFO] Assigned job 37 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:33:01 [INFO] Job 37 completed successfully (phase=measurement). Operation: power on [6, 9]. Result: 10077696. Processing time: 1.283s, Cold start penalty: 50.0ms, Warmth state: WARM, Warmth level: 0.5, Is cold start: False
+2025-08-01 05:33:12 [INFO] Job 38 added to queue: operation=divide, load=364, priority=0, deadline=1754022818.3, urgency_score=0.00
+2025-08-01 05:33:12 [INFO] Job 38 added to queue from generator jobgen_79cff069
+2025-08-01 05:33:12 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022792.2649841, "job_id": 38, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022818.2636218, "job_load": 364, "age": 0.0005970001220703125}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:33:12 [INFO] Assigned job 38 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:33:12 [INFO] Job 39 added to queue: operation=subtract, load=376, priority=0, deadline=1754022803.3, urgency_score=0.00
+2025-08-01 05:33:12 [INFO] Job 39 added to queue from generator jobgen_79cff069
+2025-08-01 05:33:12 [INFO] Job 40 added to queue: operation=add, load=390, priority=1, deadline=1754022806.3, urgency_score=1.00
+2025-08-01 05:33:12 [INFO] Job 40 added to queue from generator jobgen_79cff069
+2025-08-01 05:33:12 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022792.3177211, "job_id": 39, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 0, "urgency_score": 0.0, "deadline": 1754022803.264481, "job_load": 376, "age": 0.0520172119140625}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 1, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:33:12 [INFO] Assigned job 39 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:33:12 [INFO] SCHEDULING_DECISION: {"timestamp": 1754022792.370667, "job_id": 40, "job_algorithm": "edf_job", "worker_algorithm": "fastest_worker_fair", "selected_worker": "WORKER_1", "job_properties": {"priority": 1, "urgency_score": 1.0, "deadline": 1754022806.26479, "job_load": 390, "age": 0.1047048568725586}, "worker_properties": {"load_percentage": 0.0, "network_score": 2.41, "processing_speed": 1.103740053686339, "available_capacity": 774}, "system_state": {"total_jobs_queued": 0, "total_workers_available": 4, "avg_worker_load": 0.0}}
+2025-08-01 05:33:12 [INFO] Assigned job 40 to worker WORKER_1 (phase: measurement)
+2025-08-01 05:33:13 [INFO] Job 38 completed successfully (phase=measurement). Operation: divide on [8, 3]. Result: 2.6666666666666665. Processing time: 1.038s, Cold start penalty: 50.0ms, Warmth state: WARM, Warmth level: 0.5, Is cold start: False
+2025-08-01 05:33:14 [INFO] Job 39 completed successfully (phase=measurement). Operation: subtract on [7, 4]. Result: 3. Processing time: 1.012s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
+2025-08-01 05:33:15 [INFO] Job 40 completed successfully (phase=measurement). Operation: add on [7, 4]. Result: 11. Processing time: 1.043s, Cold start penalty: 0.0ms, Warmth state: HOT, Warmth level: 1.0, Is cold start: False
