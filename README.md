@@ -12,100 +12,6 @@ The project implements **15 hybrid scheduling strategies** (3 job-side x 5 worke
 
 ---
 
-## Research Structure
-
-This project follows a three-part research methodology:
-
-### Part 1: System Design
-Implementation of a distributed FaaS simulation system with realistic constraints and configurable scheduling algorithms.
-
-### Part 2: Benchmarking Methodology
-Development of a rigorous experimental protocol for comparative evaluation of hybrid scheduling strategies.
-
-### Part 3: Statistical Evaluation
-Comprehensive analysis framework employing multiple statistical techniques to validate findings and establish algorithmic trade-offs.
-
-## System Architecture
-The Meta TaskWave system comprises three core components that simulate a realistic FaaS environment:
-
-### Job Generator (`job-generator.py`)
-**Purpose:** Synthetic workload creation with configurable patterns
-- **Batch Control:** 4-8 jobs per batch reflecting production FaaS patterns (Shahrad et al., 2020; Joosen et al., 2023)
-- **Priority Distribution:** 30% high-priority jobs based on Azure Functions analysis (Shahrad et al., 2020)
-- **Inter-arrival Timing:** Bursty batch arrivals validated against Huawei cloud traces (Joosen et al., 2023)
-- **Load Variation:** 200-600MB job sizes following documented serverless application patterns (Eismann et al., 2022)
-- **Workload Characterisation:** Based on SeBS benchmark methodology (Copik et al., 2021)
-
-### Central Scheduler (`scheduler.py`)
-**Purpose:** Hybrid algorithm implementation and intelligent job assignment
-
-**Algorithm Foundation:**
-- **Kubernetes Scheduling:** Load balancing and fairness principles (Kaur et al., 2020; Chu et al., 2025)
-- **GPU Orchestration:** Dynamic container orchestration strategies (Thinakaran et al., 2019)
-- **Heterogeneous Resource Management:** Multi-objective scheduling approaches (Vandebon et al., 2021)
-
-#### Algorithm Combinations:
-
-**Job-Side Algorithms (3):**
-- **Round Robin (RR):** FIFO baseline preventing job starvation 
-- **Earliest Deadline First (EDF):** Real-time scheduling theory for time-sensitive workload
-- **Urgency First (UF):** Priority-deadline balancing inspired by multi-objective cloud scheduling
-
-**Worker-Side Algorithms (5):**
-- **Random:** Statistical baseline for comparative analysis
-- **Round Robin:** Fair distribution based on container orchestration patterns
-- **Least Loaded Fair:** Load-balancing with fairness constraints from Kubernetes researc
-- **Fastest Worker Fair:** Throughput maximisation following GPU orchestration principles
-- **Network Optimal Fair:** Communication overhead minimisation based on bandwidth-sharing strategies
-
-**Total Combinations:** 15 hybrid strategies (3 x 5 matrix)
-
-### Worker Pool (`worker.py`)
-**Purpose:** Heterogeneous workers with realistic FaaS constraints validated by production studies
-
-- **Capacity Variation:** 600-1200MB memory allocation following AWS Lambda documentation (AWS, 2025)
-- **Cold Start Penalties:** 300ms base penalty based on multiple provider studies (Ustiugov et al., 2021; Silva et al., 2020)
-- **Container Lifecycle:** HOT/WARM/COLD transitions following serverless caching research (Fuerst & Sharma, 2021)
-- **Performance Modeling:** Processing variations based on serverless performance evaluation (Scheuner & Leitner, 2020; Mahmoudi & Khazaei, 2022)
-- **Workload Analysis:** DAG transformation and characterisation patterns (Mahgoub et al., 2022)
-
-### Container Lifecycle Model
-Meta TaskWave implements a three-tier thermal state model that simulates container lifecycle behaviour in FaaS environments:
-
-- **HOT State:** ≤10s idle (no penalty) - Container is warm and ready for immediate execution
-- **WARM State:** >10s and ≤30s idle (20% penalty) - Container requires partial reactivation
-- **COLD State:** >30s idle (full 300ms penalty) - Container requires complete cold start
-
-These states use a 1:60 time compression factor: 1 second in simulation represents 60 seconds in real FaaS environments. This scaling maintains realistic experimental duration whilst preserving authentic thermal dynamics observed in production systems.
-
-The step-function model reflects real-world container management where resources are reclaimed in stages rather than gradually, directly impacting scheduling performance through cold start penalties.
-
-## Benchmarking Methodology
-
-### Literature-Validated Experimental Design
-The benchmarking protocol follows established practices from serverless performance research:
-
-**Benchmark Structure:** Three-phase approach based on SeBS methodology (Copik et al., 2021) and performance stability research (Eismann et al., 2022)
-
-**Workload Intensities:** Based on production trace analysis from multiple cloud providers:
-- **Light Workload:** 8-15s inter-arrival delays (Joosen et al., 2023 - low-activity patterns)
-- **Moderate Workload:** 2-5s inter-arrival delays (Shahrad et al., 2020 - typical production)
-- **Heavy Workload:** 0.5-1.5s inter-arrival delays (Joosen et al., 2023 - peak traffic bursts)
-
-**Performance Metrics:** Comprehensive coverage following FaaS performance evaluation frameworks (Scheuner & Leitner, 2020; Mahmoudi & Khazaei, 2022)
-
-## Statistical Evaluation Framework
-Multi-layered statistical approach validated against established practices in distributed systems research:
-
-### Analysis Components
-1. **Distribution Analysis:** Coefficient of Variation following cloud benchmarking standards (Folkerts et al., 2013)
-2. **Variance Component Analysis:** ANOVA methodology from cloud scheduling research (Wang, 2024; Chu et al., 2025)
-3. **Categorical Association Analysis:** Chi-square and Cramér's V from multi-objective scheduling analysis (Lin et al., 2019)
-4. **Thermal Efficiency Analysis:** Novel container lifecycle metrics building on cold start research (Fuerst & Sharma, 2021; Romero et al., 2021)
-5. **Cross-Validation:** Correlation validation ensuring methodological robustness
-
----
-
 ## Installation and Setup
 
 ### Prerequisites
@@ -121,7 +27,7 @@ This project uses **dual environments** for optimal package management:
 
 #### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/meta-taskwave.git
+git clone https://github.com/theresarto/meta-taskwave.git
 cd meta-taskwave
 ```
 
@@ -267,6 +173,100 @@ cd meta-taskwave/src
 source ../venv/bin/activate
 python job-generator.py
 ```
+---
+
+## Research Structure
+
+This project follows a three-part research methodology:
+
+### Part 1: System Design
+Implementation of a distributed FaaS simulation system with realistic constraints and configurable scheduling algorithms.
+
+### Part 2: Benchmarking Methodology
+Development of a rigorous experimental protocol for comparative evaluation of hybrid scheduling strategies.
+
+### Part 3: Statistical Evaluation
+Comprehensive analysis framework employing multiple statistical techniques to validate findings and establish algorithmic trade-offs.
+
+## System Architecture
+The Meta TaskWave system comprises three core components that simulate a realistic FaaS environment:
+
+### Job Generator (`job-generator.py`)
+**Purpose:** Synthetic workload creation with configurable patterns
+- **Batch Control:** 4-8 jobs per batch reflecting production FaaS patterns (Shahrad et al., 2020; Joosen et al., 2023)
+- **Priority Distribution:** 30% high-priority jobs based on Azure Functions analysis (Shahrad et al., 2020)
+- **Inter-arrival Timing:** Bursty batch arrivals validated against Huawei cloud traces (Joosen et al., 2023)
+- **Load Variation:** 200-600MB job sizes following documented serverless application patterns (Eismann et al., 2022)
+- **Workload Characterisation:** Based on SeBS benchmark methodology (Copik et al., 2021)
+
+### Central Scheduler (`scheduler.py`)
+**Purpose:** Hybrid algorithm implementation and intelligent job assignment
+
+**Algorithm Foundation:**
+- **Kubernetes Scheduling:** Load balancing and fairness principles (Kaur et al., 2020; Chu et al., 2025)
+- **GPU Orchestration:** Dynamic container orchestration strategies (Thinakaran et al., 2019)
+- **Heterogeneous Resource Management:** Multi-objective scheduling approaches (Vandebon et al., 2021)
+
+#### Algorithm Combinations:
+
+**Job-Side Algorithms (3):**
+- **Round Robin (RR):** FIFO baseline preventing job starvation 
+- **Earliest Deadline First (EDF):** Real-time scheduling theory for time-sensitive workload
+- **Urgency First (UF):** Priority-deadline balancing inspired by multi-objective cloud scheduling
+
+**Worker-Side Algorithms (5):**
+- **Random:** Statistical baseline for comparative analysis
+- **Round Robin:** Fair distribution based on container orchestration patterns
+- **Least Loaded Fair:** Load-balancing with fairness constraints from Kubernetes researc
+- **Fastest Worker Fair:** Throughput maximisation following GPU orchestration principles
+- **Network Optimal Fair:** Communication overhead minimisation based on bandwidth-sharing strategies
+
+**Total Combinations:** 15 hybrid strategies (3 x 5 matrix)
+
+### Worker Pool (`worker.py`)
+**Purpose:** Heterogeneous workers with realistic FaaS constraints validated by production studies
+
+- **Capacity Variation:** 600-1200MB memory allocation following AWS Lambda documentation (AWS, 2025)
+- **Cold Start Penalties:** 300ms base penalty based on multiple provider studies (Ustiugov et al., 2021; Silva et al., 2020)
+- **Container Lifecycle:** HOT/WARM/COLD transitions following serverless caching research (Fuerst & Sharma, 2021)
+- **Performance Modeling:** Processing variations based on serverless performance evaluation (Scheuner & Leitner, 2020; Mahmoudi & Khazaei, 2022)
+- **Workload Analysis:** DAG transformation and characterisation patterns (Mahgoub et al., 2022)
+
+### Container Lifecycle Model
+Meta TaskWave implements a three-tier thermal state model that simulates container lifecycle behaviour in FaaS environments:
+
+- **HOT State:** ≤10s idle (no penalty) - Container is warm and ready for immediate execution
+- **WARM State:** >10s and ≤30s idle (20% penalty) - Container requires partial reactivation
+- **COLD State:** >30s idle (full 300ms penalty) - Container requires complete cold start
+
+These states use a 1:60 time compression factor: 1 second in simulation represents 60 seconds in real FaaS environments. This scaling maintains realistic experimental duration whilst preserving authentic thermal dynamics observed in production systems.
+
+The step-function model reflects real-world container management where resources are reclaimed in stages rather than gradually, directly impacting scheduling performance through cold start penalties.
+
+## Benchmarking Methodology
+
+### Literature-Validated Experimental Design
+The benchmarking protocol follows established practices from serverless performance research:
+
+**Benchmark Structure:** Three-phase approach based on SeBS methodology (Copik et al., 2021) and performance stability research (Eismann et al., 2022)
+
+**Workload Intensities:** Based on production trace analysis from multiple cloud providers:
+- **Light Workload:** 8-15s inter-arrival delays (Joosen et al., 2023 - low-activity patterns)
+- **Moderate Workload:** 2-5s inter-arrival delays (Shahrad et al., 2020 - typical production)
+- **Heavy Workload:** 0.5-1.5s inter-arrival delays (Joosen et al., 2023 - peak traffic bursts)
+
+**Performance Metrics:** Comprehensive coverage following FaaS performance evaluation frameworks (Scheuner & Leitner, 2020; Mahmoudi & Khazaei, 2022)
+
+## Statistical Evaluation Framework
+Multi-layered statistical approach validated against established practices in distributed systems research:
+
+### Analysis Components
+1. **Distribution Analysis:** Coefficient of Variation following cloud benchmarking standards (Folkerts et al., 2013)
+2. **Variance Component Analysis:** ANOVA methodology from cloud scheduling research (Wang, 2024; Chu et al., 2025)
+3. **Categorical Association Analysis:** Chi-square and Cramér's V from multi-objective scheduling analysis (Lin et al., 2019)
+4. **Thermal Efficiency Analysis:** Novel container lifecycle metrics building on cold start research (Fuerst & Sharma, 2021; Romero et al., 2021)
+5. **Cross-Validation:** Correlation validation ensuring methodological robustness
+
 ---
 
 ## Benchmarking Methodology
