@@ -243,6 +243,15 @@ These states use a 1:60 time compression factor: 1 second in simulation represen
 
 The step-function model reflects real-world container management where resources are reclaimed in stages rather than gradually, directly impacting scheduling performance through cold start penalties.
 
+## Technical Specifications
+### System Parameters
+
+- **Job Workload Profile:** 4-8 jobs per batch, 200-600MB load variation
+- **Worker Configuration:** 600-1200MB memory, 0.8-1.2x processing speed variation
+- **Network Constraints:** 0.05-0.2s latency ranges with proximity-based routing
+- **Cold Start Simulation:** 1:60 time compression (1 second in simulation represents 60 seconds in real FaaS environments), 60-second inactivity threshold
+- **Experimental Scale:** 1,050 trials, 109,568 total jobs evaluated
+
 ## Benchmarking Methodology
 
 ### Literature-Validated Experimental Design
@@ -305,15 +314,20 @@ The comprehensive statistical evaluation is documented in detailed Jupyter noteb
 
 - **Part 1:** Distribution & Variance Analysis: 
 - **Part 2:** Categorical Association Analysis
-- **Part 3:** Thermal Efficiency & Cross-Validation
+- **Parts 3 & 4:** Thermal Efficiency & Cross-Validation
+
+**Note:** Part 4 is exploratory data working from Part 3 that needs organisation. This reveals the final figures, but will need organisation.
+
+### Performance Validation
+All scheduling algorithms follow foundational computer science principles without complex optimisation heuristics, ensuring algorithmic effects can be isolated and compared systematically.
 
 ## Key Research Findings
 
 ### Primary Discoveries
 1. **Worker Selection Dominance:** Worker algorithms demonstrate significantly stronger performance impact under light workloads (Cramér's V = 0.33) compared to job algorithms (p > 0.05, V < 0.01)
 2. **Thermal State Hierarchy:** Container lifecycle management > worker selection > job selection, with penalties accounting for >98% of performance variation
-3. **Workload Sensitivity Zones:** Moderate workloads demonstrate 87x greater algorithmic sensitivity, revealing optimal zones for meta-scheduling
-4. **Cross-Validation Strength:** Thermal stability patterns predict penalty avoidance with strong correlation (r = -0.89, p < 0.001)
+3. **Workload Sensitivity Zones:** Moderate workloads demonstrate 87× greater algorithmic sensitivity, revealing optimal transition zones for meta-scheduling. The elbow between light and moderate workloads identifies where algorithms retain maximum leverage before saturation eliminates differentiation.
+4. **Cross-Validation Strength:** Thermal stability patterns predict penalty avoidance with strong correlation (r = -0.892, p < 0.001)
 
 ### Practical Implications
 - **Meta-Scheduling Viability:** Framework successfully exposes interpretable trade-offs for adaptive algorithm selection
@@ -345,6 +359,7 @@ meta-taskwave/
 │   ├── 01_variance_analysis.ipynb 
 │   ├── 02_categorical_associations.ipynnb 
 │   ├── 03_thermal_efficiency_cross_val.ipynb
+│   ├── 04_exploratory_data_cross_val_TE   # Note: This is the latest exploratory data for the final output
 │   ├── csv_exports/                  # Analysis results (from conda folder)
 │   └── img_exports/                  # Generated images (from conda folder)
 │
@@ -371,23 +386,13 @@ meta-taskwave/
 4. **Meta-Selection Foundation:** Structured insights supporting adaptive scheduling through interpretable algorithm selection
 5. **Workload Regime Discovery:** Identification of optimal sensitivity zones for scheduling approaches
 
-## Technical Specifications
-### System Parameters
-
-- **Job Workload Profile:** 4-8 jobs per batch, 200-600MB load variation
-- **Worker Configuration:** 600-1200MB memory, 0.8-1.2x processing speed variation
-- **Network Constraints:** 0.05-0.2s latency ranges with proximity-based routing
-- **Cold Start Simulation:** 1:60 time compression (1 second in simulation represents 60 seconds in real FaaS environments), 60-second inactivity threshold
-- **Experimental Scale:** 1,050 trials, 109,568 total jobs evaluated
-
-### Performance Validation
-All scheduling algorithms follow foundational computer science principles without complex optimisation heuristics, ensuring algorithmic effects can be isolated and compared systematically.
-
 ---
 
 ## References
 
 AWS. (2025). *AWS Lambda resource model and configuration*. Amazon Web Services Documentation. https://docs.aws.amazon.com/lambda/
+
+Calavaro, C., Russo Russo, G., Salvati, M., Cardellini, V., & Lo Presti, F. (2024). Towards energy-aware execution and offloading of serverless functions. *Proceedings of the 4th Workshop on Flexible Resource and Application Management on the Edge*, 23-30. https://doi.org/10.1145/3659994.3660313
 
 Chu, X., Li, M., & Qin, S. (2025). Dynamic load balancing using resource-aware task assignment in distributed systems. *IEEE Transactions on Cloud Computing*, 13(1), 45-62.
 
@@ -406,6 +411,8 @@ Lin, C., Khazaei, H., & Litoiu, M. (2019). Performance modelling and optimizatio
 Mahgoub, A., Tarraf, A., Shankar, M., Kourtellis, N., Hoque, I., & Chaterji, S. (2022). WISEFUSE: Workload characterization and DAG transformation for serverless workflows. *Proceedings of the ACM on Measurement and Analysis of Computing Systems*, 6(2), 1-28.
 
 Mahmoudi, N., & Khazaei, H. (2022). Performance modeling of serverless computing platforms. *IEEE Transactions on Cloud Computing*, 10(4), 2834-2847.
+
+Matricardi, A., Bocci, A., Forti, S., & Brogi, A. (2023). Simulating FaaS orchestrations in the cloud-edge continuum. *Proceedings of the 3rd Workshop on Flexible Resource and Application Management on the Edge*, 19-26. https://doi.org/10.1145/3589010.3594893
 
 Romero, F., Chaudhry, G. I., Goiri, I., Gopa, P., Batum, P., Yadwadkar, N. J., ... & Bianchini, R. (2021). FaaS profiler: Tracing serverless functions at scale. *Proceedings of the 2021 USENIX Annual Technical Conference*, 843-858.
 
